@@ -27,6 +27,7 @@ var gameOver=false;
 
 function preload() {
     this.load.image("sky", "assets/sky.png");
+    this.load.image("logo", "assets/logo.png");
     this.load.image("ground", "assets/platform.png");
     this.load.image("star", "assets/star.png");
     this.load.image("bomb", "assets/bomb.png");
@@ -41,6 +42,7 @@ function create() {
     platforms.create(600, 400, "ground");
     platforms.create(50, 250, "ground");
     platforms.create(750, 220, "ground");
+    this.add.image(665, 15, "logo").setScale(0.5);
 
     player = this.physics.add.sprite(100, 450, "dude");
 
@@ -152,3 +154,4 @@ function hitBomb(player, bomb) {
     player.anims.play("turn");
     gameOver = true;
 }
+
